@@ -1,7 +1,6 @@
 "use strict";
 
 let menu = [
-
     [
         { item: "Bacon, Egg, and Cheese Croissant", price: 3.69 },
         { item: "Sausage, Egg, and Cheese Biscuit", price: 3.49 },
@@ -18,32 +17,27 @@ let menu = [
         { item: "Filet Mignon", price: 24.99 },
         { item: "Vegetable Stir-Fry", price: 12.99 },
         { item: "Lobster Tail", price: 29.99 },
-        { item: "Mushroom Risotto", price: 16.99}
+        { item: "Mushroom Risotto", price: 16.99 }
     ]
 ];
 
 // 0 for Breakfast, 1 for Lunch, 2 for Dinner
-let menuItems = 1
+let menuItems = 1;
 
-let meals = menu.filter( i => i.item == menuItems);
+if (menuItems === 0) {
+    console.log("Breakfast Menu");
+    console.log("-------------------");
+} else if (menuItems === 1) {
+    console.log("Lunch Menu");
+    console.log("-------------------");
 
-console.log("Breakfast Menu")
+} else if (menuItems === 2) {
+    console.log("Dinner Menu");
+    console.log("-------------------");
 
-for (let meal of meals) {
-    console.log(`${meal.item}, ${meal.price}`)
 }
 
-// let mealNames = ["Breakfast Menu", "Lunch Menu", "Dinner Menu"];
-// let selectedMenu = mealNames[meals];
-// let selectedItems = menu.filter(item => item.type == selectedMenu);
-// let numSelectedItems = selectedItems.length
-
-// if (numSelectedItems >= 0) {
-//   console.log(selectedMenu);
-//   console.log("-------------------------------------------");
-//   selectedItems.forEach(item => {
-//     console.log(`${item.item} - $${item.price}`);
-//   });
-// } else {
-//   console.log("Invalid meal option");
-// }
+// Access the menu items for the selected menu using menu[menuItems]
+for (let item of menu[menuItems]) {
+    console.log(`${item.item}, $${item.price}`);
+}
