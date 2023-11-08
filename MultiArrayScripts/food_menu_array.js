@@ -38,6 +38,6 @@ if (menuItems === 0) {
 }
 
 // Access the menu items for the selected menu using menu[menuItems]
-for (let item of menu[menuItems]) {
-    console.log(`${item.item}, $${item.price}`);
+for (let option of menu[menuItems]) {
+    console.log(`${option.item}, $${option.price}`);
 }
